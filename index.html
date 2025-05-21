@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="description"
+          content="">
+    <meta name="keywords" content="embodied ai, spatial affordance, robot navigation, nlp">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Simultaneous Localization and Affordance Prediction of Tasks from Egocentric Video</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+    rel="stylesheet">
+
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+    <link rel="icon" href="./static/images/favicon.svg">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+    <section class="hero">
+        <div class="hero-body">
+          <div class="container is-max-desktop">
+            <div class="columns is-centered">
+              <div class="column has-text-centered">
+                <h1 class="title is-1 publication-title">Simultaneous Localization and Affordance Prediction of Tasks from Egocentric Video</h1>
+                <div class="is-size-5 publication-authors">
+                  <span class="author-block">
+                    <a href="https://scholar.google.com/citations?user=D-z_q7sAAAAJ&hl=en&oi=ao">Zach Chavis</a>,</span>
+                  <span class="author-block">
+                    <a href="https://scholar.google.com/citations?user=xiSdzEkAAAAJ&hl=en&oi=ao">Hyun Soo Park</a>,</span>
+                  <span class="author-block">
+                    <a href="https://scholar.google.com/citations?user=aVg7BRwAAAAJ&hl=en&oi=ao">Stephen J. Guy</a>
+                  </span>
+                </div>
+      
+                <div class="is-size-5 publication-authors">
+                  <span class="author-block">University of Minnesota</span>
+                </div>
+
+                <div class="column has-text-centered">
+                    <div class="publication-links">
+                      <!-- PDF Link. -->
+                      <!-- <span class="link-block">
+                        <a href="https://appliedmotionlab.github.io/slap/slap_2025.pdf"
+                           class="external-link button is-normal is-rounded is-dark">
+                          <span class="icon">
+                              <i class="fas fa-file-pdf"></i>
+                          </span>
+                          <span>Paper</span>
+                        </a>
+                      </span> -->
+                      <span class="link-block">
+                        <a href="https://www.arxiv.org/abs/2407.13856"
+                           class="external-link button is-normal is-rounded is-dark">
+                          <span class="icon">
+                              <i class="ai ai-arxiv"></i>
+                          </span>
+                          <span>arXiv</span>
+                        </a>
+                      </span>
+                      <!-- Video Link. -->
+                      <!-- <span class="link-block">
+                        <a href="https://www.youtube.com/watch?"
+                           class="external-link button is-normal is-rounded is-dark">
+                          <span class="icon">
+                              <i class="fab fa-youtube"></i>
+                          </span>
+                          <span>Video</span>
+                        </a>
+                      </span> -->
+                      <!-- Code Link. -->
+                      <span class="link-block">
+                        <a href="https://appliedmotionlab.github.io/slap/"
+                           class="external-link button is-normal is-rounded is-dark">
+                          <span class="icon">
+                              <i class="fab fa-github"></i>
+                          </span>
+                          <span>Code (coming soon)</span>
+                          </a>
+                      </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="hero teaser">
+        <div class="container is-max-desktop">
+          <div class="hero-body">
+            <div style="text-align: center;">
+                <div class="text-above" style="margin-bottom: 20px;">
+                    <h1 style="font-size: 2rem; font-style: italic; ; text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);">"Where can I ... ?"</h1>
+                </div>
+                <div style="display: flex; justify-content: space-between; gap: 10px; max-width: 100%; margin: 0 auto;">
+                    <div style="display: flex; flex-direction: column; align-items: center; width: 24%; max-width: 100%;">
+                        <video autoplay muted loop playsinline>
+                            <source src="static/videos/boilnoods480.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <h2 style="margin-top: 10px; font-size: 1rem; color: #EF5948; text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);">"Boil the noodles"</h2>
+                    </div>
+                    <div style="display: flex; flex-direction: column; align-items: center; width: 24%; max-width: 100%;">
+                        <video autoplay muted loop playsinline>
+                            <source src="static/videos/cutcarrots480.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <h2 style="margin-top: 10px; font-size: 1rem; color: #FFBA17; text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);">"Julienne the carrots"</h2>
+                    </div>
+                    <div style="display: flex; flex-direction: column; align-items: center; width: 24%; max-width: 100%;">
+                        <video autoplay muted loop playsinline>
+                            <source src="static/videos/flipcake480.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <h2 style="margin-top: 10px; font-size: 1rem; color: #EF5948; text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);">"Flip a pancake"</h2>
+                    </div>
+                    <div style="display: flex; flex-direction: column; align-items: center; width: 24%; max-width: 100%;">
+                        <video autoplay muted loop playsinline>
+                            <source src="static/videos/washfruit480.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <h2 style="margin-top: 10px; font-size: 1rem; color: #2FABFF; text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);">"Clean the fruit"</h2>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <h2 class="subtitle has-text-centered">
+                <span class="slap">EGO-SLAP</span> learns from ego-video demonstrations, and enables spatial predictions of new tasks.     
+            </h2>
+        </div>
+    </div>
+  </section>
+
+  <!-- Paper abstract -->
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Existing foundation models often used in robot perception, such as <b>Vision-Language Models (VLMs) are typically limited to reasoning over objects and actions currently visible within the image</b>. We present a spatial extension to the VLM, which leverages egocentric video demonstrations to predict new tasks relative to the observer.
+            </p>
+            <h2 class="title is-4">
+              Spatial Task Affordance
+            </h2>
+            <p>
+              We define spatial task affordance as the region in an environment where a given task can be completed. We refer to the problem of predicting the location of this region relative to the observer as <b>Simultaneous Localization and Affordance Prediction (<span class="slap">SLAP</span>)</b>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End paper abstract -->
+
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <video id="teaser" autoplay controls muted loop playsinline height="10%">
+          <source src="./static/videos/egotasks.mp4"
+                  type="video/mp4">
+        </video>
+        <h2 class="subtitle has-text-centered">
+          Large egocentric datasets give us access to demonstrations of tasks with 3D spatial information. We can leverage these demonstrations to learn the 3D task affordances relative to the image context.
+        </h2>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@INPROCEEDINGS {zachavis-slap-2025,
+    author={Chavis, Zach and Park, Hyun Soo and Guy, Stephen J.},
+    title={Simultaneous Localization and Affordance Prediction of Tasks from Egocentric Video},
+    booktitle={Proceedings of the IEEE International Conference on Robotics and Automation (ICRA)},
+    year={2025},
+    month={May.},
+    address={Atlanta},
+}</code></pre>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <a class="icon-link"
+           href="./static/videos/nerfies_paper.pdf">
+          <i class="fas fa-file-pdf"></i>
+        </a>
+        <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This website is licensed under a <a rel="license"
+                                                  href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+              Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+            <p>
+              This website was built upon the Nerfies website, available at <a
+                href="https://github.com/nerfies/nerfies.github.io">this link</a>.
+  
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
