@@ -26,6 +26,18 @@
     <script src="./static/js/bulma-slider.min.js"></script>
     <script src="./static/js/index.js"></script>
 </head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EZYSWBRY62"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EZYSWBRY62');
+</script>
+
+
 <body>
 
 
@@ -52,7 +64,7 @@
                 <div class="column has-text-centered">
                     <div class="publication-links">
                       <!-- PDF Link. -->
-                      <!-- <span class="link-block">
+                      <span class="link-block">
                         <a href="https://appliedmotionlab.github.io/slap/slap_2025.pdf"
                            class="external-link button is-normal is-rounded is-dark">
                           <span class="icon">
@@ -60,8 +72,8 @@
                           </span>
                           <span>Paper</span>
                         </a>
-                      </span> -->
-                      <span class="link-block">
+                      </span>
+                      <!-- <span class="link-block">
                         <a href="https://www.arxiv.org/abs/2407.13856"
                            class="external-link button is-normal is-rounded is-dark">
                           <span class="icon">
@@ -69,7 +81,7 @@
                           </span>
                           <span>arXiv</span>
                         </a>
-                      </span>
+                      </span> -->
                       <!-- Video Link. -->
                       <!-- <span class="link-block">
                         <a href="https://www.youtube.com/watch?"
@@ -134,16 +146,12 @@
                     </div>
                 </div>
             </div>
-            <br>
-            <h2 class="subtitle has-text-centered">
-                <span class="slap">EGO-SLAP</span> learns from ego-video demonstrations, and enables spatial predictions of new tasks.     
-            </h2>
         </div>
     </div>
   </section>
 
   <!-- Paper abstract -->
-  <section class="section hero is-light">
+  <section class="section">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
@@ -179,6 +187,81 @@
     </div>
   </section>
 
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Training Framework</h2>
+          <div class="method-image">
+            <img src="./static/images/slap_framework.png" alt="A depiction of SLAP training framework." />
+          </div>
+          <div class="content has-text-justified">
+            <p>
+              Our approach to training a model to solve ego SLAP involves pairing tasks seen in a demonstration with unrelated frames, allowing the model to capture the environment’s spatial task affordances.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Results</h2>
+          <div class="content has-text-justified">
+            <p>
+              Our model was trained on a dataset curated from Ego-Exo4D, representing 12 kitchen environments, with two hours of video data containing 422 tasks. We test our model on novel tasks for affordance grounding and localization error. We compare to a KNN baseline, which uses CLIP to encode all demonstration images, and returns the camera pose of the image which maximizes the cosine similarity with the query text encoding.
+            </p>
+          </div>
+          <div style="padding: 20px; overflow: hidden;">
+            <div style="float: left; width: 45%; margin-right: 5%; text-align: center;">
+                <img src="static/images/result_affordance.png" alt="Image 1" style="width: 100%; height: auto;">
+                <p><b>Affordance Grounding.</b> Predict which of 3 tasks can be accomplished in the location represented by an image. The dashed line represents random guess.</p>
+            </div>
+
+            <div style="float: left; width: 45%; text-align: center;">
+                <img src="static/images/result_localization.png" alt="Image 2" style="width: 100%; height: auto;">
+                <p><b>Task Localization Error.</b> Predict the location and extent of the task region in the environment relative to an image.</p>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Robot Applications</h2>
+          <br />
+          <h3 class="title is-4">Navigation</h3>
+          <div class="method-image">
+            <img src="./static/images/nav.png" alt="An example of a robot navigating to the task 'heat the oil' using its camera." />
+          </div>
+          <div class="content has-text-justified">
+            <p>
+              Using the trained model, a mobile robot can query new tasks from its camera not before seen in the environment. The stove is highlighted in both views to provide context.
+            </p>
+          </div>
+
+          <br />
+          <h3 class="title is-4">Task Obstacles</h3>
+          <div class="method-image">
+            <img src="./static/images/task_obs.png" alt="An example of a robot predicting a set of tasks, representing a busy area, and navigating around them." />
+          </div>
+          <div class="content has-text-justified">
+            <p>
+              A mobile robot may want to avoid busy areas while carrying out tasks. Multiple predicted task regions can be combined via a convex hull, representing busy regions a robot should avoid while navigating.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
@@ -187,11 +270,11 @@
     title={Simultaneous Localization and Affordance Prediction of Tasks from Egocentric Video},
     booktitle={Proceedings of the IEEE International Conference on Robotics and Automation (ICRA)},
     year={2025},
-    month={May.},
-    address={Atlanta},
 }</code></pre>
     </div>
   </section>
+
+  
 
   <footer class="footer">
     <div class="container">
